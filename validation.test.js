@@ -4,45 +4,31 @@ import assert from "node:assert";
 import { validateEmail, validatePassword, validateAge } from "./validation.js";
 
 test("validateEmail hyväksyy tavallisen sähköpostiosoitteen", () => {
-  const result = validateEmail("opiskelija@example.com");
-
-  assert.strictEqual(result, true);
+  assert.strictEqual(validateEmail("opiskelija@example.com"), true);
 });
 
 test("validateEmail hylkää osoitteen ilman @-merkkiä", () => {
-  const result = validateEmail("opiskelija.example.com");
-
-  assert.strictEqual(result, false);
+  assert.strictEqual(validateEmail("opiskelija.example.com"), false);
 });
 
 test("validatePassword hylkää liian lyhyen salasanan", () => {
-  const result = validatePassword("sala123");
-
-  assert.strictEqual(result, false);
+  assert.strictEqual(validatePassword("sala123"), false);
 });
 
 test("validatePassword hyväksyy vähintään 8 merkkiä pitkän salasanan", () => {
-  const result = validatePassword("salasana123");
-
-  assert.strictEqual(result, true);
+  assert.strictEqual(validatePassword("salasana123"), true);
 });
 
 test("validateAge hyväksyy iän 18", () => {
-  const result = validateAge(18);
-
-  assert.strictEqual(result, true);
+  assert.strictEqual(validateAge(18), true);
 });
 
 test("validateAge hylkää iän 15", () => {
-  const result = validateAge(15);
-
-  assert.strictEqual(result, false);
+  assert.strictEqual(validateAge(15), false);
 });
 
 test("validateAge hylkää iän 121", () => {
-  const result = validateAge(121);
-
-  assert.strictEqual(result, false);
+  assert.strictEqual(validateAge(121), false);
 });
 
 test("validateEmail hylkää tyhjän merkkijonon", () => {
