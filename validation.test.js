@@ -19,3 +19,9 @@ test("validateEmail hylkää osoitteen ilman @-merkkiä", () => {
 
   assert.strictEqual(result, false);
 });
+
+test("validatePassword hylkää liian lyhyen salasanan", () => {
+  const result = validatePassword("sala123");
+
+  assert.strictEqual(result, false);
+});
