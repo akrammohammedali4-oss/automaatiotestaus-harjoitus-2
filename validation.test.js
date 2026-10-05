@@ -43,3 +43,9 @@ test("validateAge hylkää iän 15", () => {
 
   assert.strictEqual(result, false);
 });
+
+test("validateAge hylkää iän 121", () => {
+  const result = validateAge(121);
+
+  assert.strictEqual(result, false);
+});
