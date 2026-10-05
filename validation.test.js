@@ -25,3 +25,9 @@ test("validatePassword hylkää liian lyhyen salasanan", () => {
 
   assert.strictEqual(result, false);
 });
+
+test("validatePassword hyväksyy vähintään 8 merkkiä pitkän salasanan", () => {
+  const result = validatePassword("salasana123");
+
+  assert.strictEqual(result, true);
+});
