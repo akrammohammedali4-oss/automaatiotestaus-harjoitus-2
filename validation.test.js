@@ -49,3 +49,19 @@ test("validateAge hylkää iän 121", () => {
 
   assert.strictEqual(result, false);
 });
+
+test("validateEmail hylkää tyhjän merkkijonon", () => {
+  assert.strictEqual(validateEmail(""), false);
+});
+
+test("validatePassword hylkää tyhjän merkkijonon", () => {
+  assert.strictEqual(validatePassword(""), false);
+});
+
+test("validateAge hylkää merkkijonona annetun iän", () => {
+  assert.strictEqual(validateAge("18"), false);
+});
+
+test("validateAge hylkää desimaaliluvun", () => {
+  assert.strictEqual(validateAge(18.5), false);
+});
